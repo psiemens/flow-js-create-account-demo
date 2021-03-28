@@ -1,0 +1,23 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {},
+	"networks": {
+		"emulator": {
+			"host": "127.0.0.1:3569",
+			"chain": "flow-emulator"
+		}
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"keys": "274939297cb7c5d1f7d27bec6946ffdd6ad5e7f88b5daf42d17e8d02967a6db2",
+			"chain": "flow-emulator"
+		}
+	},
+	"deployments": {}
+}
