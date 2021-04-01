@@ -34,6 +34,7 @@ async function run() {
     sigAlgo,
     hashAlgo,
     creatorAuthorization,
+    config.contracts,
   )
 
   console.log("User account created")
