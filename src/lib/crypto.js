@@ -47,8 +47,8 @@ function encodePrivateKey(privateKey) {
 
 // encodedPublicKey = bigEndianBytes(X) + bigEndianBytes(Y)
 function encodePublicKey(publicKey) {
-  const x = publicKey.getX().toArrayLike(Buffer, "be")
-  const y = publicKey.getY().toArrayLike(Buffer, "be")
+  const x = publicKey.getX().toArrayLike(Buffer, "be", 32)
+  const y = publicKey.getY().toArrayLike(Buffer, "be", 32)
 
   return Buffer.concat([x, y]).toString("hex")
 }
