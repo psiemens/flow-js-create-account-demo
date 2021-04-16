@@ -1,19 +1,23 @@
 import fcl from "@onflow/fcl"
 
+import getConfig from "./src/config.js"
+
 import {
   createAccount, 
   getAuthorization,
   sendTransaction,
 } from "./src/lib/flow/index.js"
-import {sigAlgos, hashAlgos, generateKeyPair} from "./src/lib/crypto.js"
-import config from "./src/config.js"
 
-fcl.config().put("accessNode.api", config.accessApiHost)
+import {sigAlgos, hashAlgos, generateKeyPair} from "./src/lib/crypto.js"
 
 async function run() {
 
   const sigAlgo = sigAlgos.ECDSA_secp256k1
   const hashAlgo = hashAlgos.SHA3_256
+
+  const config = getConfig()
+
+  fcl.config().put("accessNode.api", config.accessApiHost)
 
   const { privateKey, publicKey } = generateKeyPair(sigAlgo)
 
